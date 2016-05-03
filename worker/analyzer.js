@@ -5,7 +5,7 @@ const vision = require('./vision');
 const util = require('util');
 const async = require('async');
 const gcloud = require('gcloud')({
-  projectId: 'cloudcats-next',
+  projectId: process.env.GCLOUD_PROJECT,
   keyFilename: 'keyfile.json'
 });
 

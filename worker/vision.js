@@ -4,13 +4,13 @@ const request = require('request');
 const uuid = require('node-uuid');
 const util = require('util');
 const gcloud = require('gcloud')({
-  projectId: 'cloudcats-next',
+  projectId: process.env.GCLOUD_PROJECT,
   keyFilename: 'keyfile.json'
 });
 
 const vision = gcloud.vision();
 const storage = gcloud.storage();
-const bucket = storage.bucket('cloudcats-bucket');
+const bucket = storage.bucket(process.env.GCLOUD_BUCKET);
 
 var count = 0;
 

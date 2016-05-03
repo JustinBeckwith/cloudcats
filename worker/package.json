@@ -5,13 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "GCLOUD_TRACE_LOGLEVEL=4 GCLOUD_PROJECT_NUM=870291072299 node server.js"
+    "start": "GCLOUD_TRACE_LOGLEVEL=4 GCLOUD_PROJECT=gcpnext-cloudcats GCLOUD_BUCKET=cloudcats-bucket-atamel node server.js"
   },
   "author": "Justin Beckwith<justin.beckwith@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@google/cloud-debug": "^0.6.2",
-    "@google/cloud-trace": "github:googlecloudplatform/cloud-trace-nodejs#canary",
+    "@google/cloud-debug": "^0.8.1",
+    "@google/cloud-trace": "^0.5.1",
     "async": "^1.5.2",
     "gcloud": "^0.29.0",
     "hapi": "^13.0.0",

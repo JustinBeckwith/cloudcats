@@ -1,6 +1,7 @@
 'use strict';
 
-require('@google/cloud-trace').start({projectId: 'cloudcats-next'});
+require('@google/cloud-trace').start();
+require('@google/cloud-debug');
 
 const Hapi = require('hapi');
 const path = require('path');
@@ -49,7 +50,7 @@ server.register(plugins, (err) => {
   // set up index page handler
   let apiEndpoint = 
     process.env.NODE_ENV == 'production' ? 
-      'https://worker-dot-cloudcats-next.appspot.com/go' :
+      'https://worker-dot-' +  process.env.GCLOUD_PROJECT + '.appspot.com/go' :
       'http://localhost:8081/go';
 
   server.route({ 

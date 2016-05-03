@@ -4,7 +4,7 @@
   "description": "CloudCats is an epic battleground to decide once and for all who the internet loves best:  dogs or cats.",
   "main": "server.js",
   "scripts": {
-    "start": "GCLOUD_PROJECT_NUM=870291072299 node --require @google/cloud-debug server.js",
+    "start": "GCLOUD_PROJECT=gcpnext-cloudcats node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Justin Beckwith<justin.beckwith@gmail.com>",
@@ -13,8 +13,8 @@
     "node": "^4.4.0"
   },
   "dependencies": {
-    "@google/cloud-debug": "^0.6.2",
-    "@google/cloud-trace": "github:googlecloudplatform/cloud-trace-nodejs#canary",
+    "@google/cloud-debug": "^0.8.1",
+    "@google/cloud-trace": "^0.5.1",
     "gcloud": "^0.29.0",
     "hapi": "^13.1.0",
     "inert": "^3.2.0",
