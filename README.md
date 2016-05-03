@@ -28,16 +28,16 @@ Cloud Cats uses a few Google Cloud APIs and Services.
 1. Create a project in the [Google Cloud Platform Console](https://console.cloud.google.com/).
 1. [Enable billing](https://console.cloud.google.com/project/_/settings) for your project.
 1. Enable Storage, PubSub, and Cloud Vision APIs in the API Manager.
-1. Create a service account and save the JSON key file in 'web/keyfile.json' amd 'worker/keyfile.json' as described in [gcloud-node](https://github.com/GoogleCloudPlatform/gcloud-node).
+1. Create a service account and save the JSON key file in `web/keyfile.json` and `worker/keyfile.json` as described in [gcloud-node](https://github.com/GoogleCloudPlatform/gcloud-node).
 1. Create a Google Cloud Storage bucket. 
-1. Set 'GCLOUD_PROJECT' and 'GCLOUD_BUCKET' in 'web/package.json' and worker/package.json'.
-1. Create a [PubNub](https://www.pubnub.com) project, note down publish and subscribe keys and update 'web/secrets.json'.
+1. Set `GCLOUD_PROJECT` and `GCLOUD_BUCKET` in `web/package.json` and `worker/package.json`.
+1. Create a [PubNub](https://www.pubnub.com) project, note down publish and subscribe keys and update `web/secrets.json`.
 
 ## Run it locally
 
-1. Start frontend: In web folder, 'npm install' and then 'npm start'
-1. Start backend: In worker folder, 'npm install' and then 'npm start'
-1. Go to 'http://localhost:8080' and hit plus to start.
+1. Start frontend: In web folder, `npm install` and then `npm start`.
+1. Start backend: In worker folder, `npm install` and then `npm start`.
+1. Go to `http://localhost:8080` and hit plus to start.
 
 ## Deployment
 
