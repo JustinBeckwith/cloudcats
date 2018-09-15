@@ -6,6 +6,9 @@
     "connect": "gcloud container clusters get-credentials cloudcats --zone us-central1-a --project cloudcats-next",
     "update": "./update.sh"
   },
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JustinBeckwith/cloudcats.git"
