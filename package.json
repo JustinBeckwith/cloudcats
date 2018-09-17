@@ -7,7 +7,7 @@
     "update": "./update.sh"
   },
   "dependencies": {
-    "axios": "^0.16.0"
+    "axios": "^0.17.0"
   },
   "repository": {
     "type": "git",
