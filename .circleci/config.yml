@@ -22,6 +22,8 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: cd web && npm install && cd ../
+      - run: cd worker && npm install && cd ../
       - run: npm run lint
 workflows:
   version: 2
