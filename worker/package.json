@@ -5,30 +5,29 @@
   "main": "server.js",
   "scripts": {
     "test": "ava test.js",
-    "start": "GCLOUD_PROJECT=cloudcats-next node server.js",
-    "debug": "GCLOUD_PROJECT=cloudcats-next node --inspect server.js",
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=keyfile.json node server.js",
     "update": "./update.sh"
   },
   "author": "Justin Beckwith<justin.beckwith@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/bigquery": "^1.3.0",
-    "@google-cloud/debug-agent": "^2.6.0",
+    "@google-cloud/bigquery": "^2.1.0",
+    "@google-cloud/debug-agent": "^3.1.0",
     "@google-cloud/logging-winston": "^0.11.0",
-    "@google-cloud/storage": "^1.7.0",
-    "@google-cloud/trace-agent": "^2.11.0",
-    "@google-cloud/vision": "^0.20.0",
+    "@google-cloud/storage": "^2.4.3",
+    "@google-cloud/trace-agent": "^3.6.0",
+    "@google-cloud/vision": "^0.25.0",
     "@grpc/proto-loader": "^0.4.0",
-    "async": "^2.6.1",
+    "async": "^2.6.2",
     "axios": "^0.18.0",
     "grpc": "^1.19.0",
     "uuid": "^3.3.2",
-    "winston": "^2.4.1"
+    "winston": "^3.2.1"
   },
   "engines": {
     "node": "^10.0.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0"
+    "ava": "^1.4.1"
   }
 }

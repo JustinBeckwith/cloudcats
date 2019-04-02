@@ -1,14 +1,8 @@
 'use strict';
 
-require('@google-cloud/trace-agent').start({
-	keyFilename: './keyfile.json',
-	projectId: 'cloudcats-next'
-});
-
+require('@google-cloud/trace-agent').start();
 require('@google-cloud/debug-agent').start({
-	allowExpressions: true,
-	keyFilename: './keyfile.json',
-	projectId: 'cloudcats-next'
+	allowExpressions: true
 });
 
 const loader = require('@grpc/proto-loader');

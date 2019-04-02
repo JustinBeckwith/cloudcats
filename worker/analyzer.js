@@ -2,13 +2,12 @@
 
 const util = require('util');
 const async = require('async');
-const bigquery = require('@google-cloud/bigquery')({
-	keyFilename: 'keyfile.json'
-});
+const {BigQuery} = require('@google-cloud/bigquery');
 const reddit = require('./reddit');
 const vision = require('./vision');
 const logger = require('./logger');
 
+const bigquery = new BigQuery();
 const dataset = bigquery.dataset('cloudcats');
 const table = dataset.table('images');
 

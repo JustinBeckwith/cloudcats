@@ -4,7 +4,7 @@
   "description": "CloudCats is an epic battleground to decide once and for all who the internet loves best:  dogs or cats.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=keyfile.json node server.js",
     "test": "ava",
     "update": "./update.sh"
   },
@@ -14,19 +14,19 @@
     "node": "^10.0.0"
   },
   "dependencies": {
-    "@google-cloud/debug-agent": "^2.6.0",
+    "@google-cloud/debug-agent": "^3.1.0",
     "@google-cloud/logging-winston": "^0.11.0",
-    "@google-cloud/trace-agent": "^2.11.0",
+    "@google-cloud/trace-agent": "^3.6.0",
     "@grpc/proto-loader": "^0.4.0",
     "grpc": "^1.19.0",
-    "hapi": "^17.5.2",
-    "inert": "^5.1.0",
+    "hapi": "^18.1.0",
+    "inert": "^5.1.2",
     "pug": "^2.0.3",
-    "socket.io": "^2.1.1",
-    "vision": "^5.3.3",
-    "winston": "^2.4.1"
+    "socket.io": "^2.2.0",
+    "vision": "^5.4.4",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
-    "ava": "^0.25.0"
+    "ava": "^1.4.1"
   }
 }
