@@ -2,8 +2,10 @@
 
 const grpc = require('grpc');
 const logger = require('./logger');
+const loader = require('@grpc/proto-loader');
 
-const proto = grpc.load('cloudcats.proto').cloudcats;
+const packageDef = loader.loadSync('cloudcats.proto');
+const proto = grpc.loadPackageDefinition(packageDef).cloudcats;
 
 const apiEndpoint = process.env.NODE_ENV === 'production' ? 'cloudcats-worker:8081' : '0.0.0.0:8081';
 

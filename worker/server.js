@@ -11,11 +11,13 @@ require('@google-cloud/debug-agent').start({
 	projectId: 'cloudcats-next'
 });
 
+const loader = require('@grpc/proto-loader');
 const grpc = require('grpc');
 const analyzer = require('./analyzer');
 const logger = require('./logger');
 
-const proto = grpc.load('cloudcats.proto').cloudcats;
+const packageDef = loader.loadSync('cloudcats.proto');
+const proto = grpc.loadPackageDefinition(packageDef).cloudcats;
 
 const server = new grpc.Server();
 server.addService(proto.Worker.service, {
