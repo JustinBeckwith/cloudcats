@@ -59,7 +59,7 @@ async function main() {
 
 	// Start the server
 	await server.start();
-	logger.info('Server running at:', server.info.uri);
+	logger.info(`Server running at ${server.info.uri}`);
 
 	// Start listening for cats
 	relay.listen(io);
