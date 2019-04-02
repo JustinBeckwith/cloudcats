@@ -2,16 +2,12 @@
 
 const axios = require('axios');
 const uuid = require('uuid/v4');
-const Vision = require('@google-cloud/vision');
-const Storage = require('@google-cloud/storage');
-
-const gconf = {
-	keyFilename: 'keyfile.json'
-};
+const {ImageAnnotatorClient} = require('@google-cloud/vision');
+const {Storage} = require('@google-cloud/storage');
 
 const bucketName = 'cloudcats-bucket';
-const vision = new Vision.ImageAnnotatorClient(gconf);
-const storage = new Storage(gconf);
+const vision = new ImageAnnotatorClient();
+const storage = new Storage();
 const bucket = storage.bucket(bucketName);
 
 async function annotate(url) {

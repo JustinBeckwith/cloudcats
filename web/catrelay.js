@@ -1,8 +1,8 @@
 'use strict';
 
 const grpc = require('grpc');
-const logger = require('./logger');
 const loader = require('@grpc/proto-loader');
+const logger = require('./logger');
 
 const packageDef = loader.loadSync('cloudcats.proto');
 const proto = grpc.loadPackageDefinition(packageDef).cloudcats;
