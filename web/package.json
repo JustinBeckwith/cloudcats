@@ -6,9 +6,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "ava",
-    "update": "./update.sh",
-    "fix": "semistandard --fix *.js"
+    "test": "ava test.js",
+    "update": "./update.sh"
   },
   "author": "Justin Beckwith<justin.beckwith@gmail.com>",
   "license": "MIT",
@@ -28,7 +27,6 @@
     "winston": "^2.4.1"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "semistandard": "^12.0.1"
+    "ava": "^0.25.0"
   }
 }

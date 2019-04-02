@@ -1,14 +1,14 @@
 # CLOUD CATS
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/JustinBeckwith/cloudcats.svg)](https://greenkeeper.io/)
 [![CircleCI badge](https://circleci.com/gh/JustinBeckwith/cloudcats/tree/master.svg?style=shield)](https://circleci.com/gh/JustinBeckwith/cloudcats/tree/master)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![Known Vulnerabilities](https://snyk.io/test/github/justinbeckwith/cloudcats/badge.svg)](https://snyk.io/test/github/justinbeckwith/cloudcats)
 
 CloudCats is an example of using node.js and various Google Cloud APIs and services to solve the greatest question of our time:  do developers prefer dogs or cats.
 
 ![CATS IN THE CLOUD][screenshot]
 
-__This is an adaptation of the [awwvision][awwvision], which uses [Kubernetes][kubernetes] to do something similar.  Credit to [Jon Parrot][jon] for the idea.__
+__This is an adaptation of the [awwvision][awwvision], which uses [Kubernetes][kubernetes] to do something similar.  Credit to [Thea Flowers][thea] for the idea.__
 
 ## How it works
 
@@ -47,7 +47,7 @@ Feel free to submit an issue on the repository, or find me at [@JustinBeckwith](
 
 [awwvision]: https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/awwvision
 [kubernetes]: http://kubernetes.io/
-[jon]: https://github.com/jonparrott
+[thea]: https://github.com/theacodes
 [screenshot]: http://i.imgur.com/lzR8TDn.jpg
 [how-it-works]: http://i.imgur.com/46Ilm2D.png
 [appengine]: https://cloud.google.com/appengine/
