@@ -29,7 +29,7 @@ async function _populatePageUrls(after, allPosts) {
             post.data.preview.images &&
             post.data.preview.images.length > 0;
 	}).map(post =>
-		post.data.preview.images[0].source.url.replace('&amp;', '&'));
+		post.data.preview.images[0].source.url.split('&amp;').join('&'));
 	// Works around https://goo.gl/u1DWDi --------^^^^^^^^^^^^^^^^^^^^^
 	console.log(posts);
 	Array.prototype.push.apply(allPosts, posts);
