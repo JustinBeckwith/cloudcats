@@ -1,6 +1,6 @@
 'use strict';
 
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const loader = require('@grpc/proto-loader');
 const logger = require('./logger');
 
@@ -30,7 +30,6 @@ function makeRequest(socket) {
 		call.on('data', data => {
 			logger.info('received data');
 			cnt++;
-			logger.info(data);
 			logger.info(JSON.stringify(data));
 			logger.info(`MESSAGE ${cnt}: ${data.type}`);
 			socket.emit('cloudcats', data);

@@ -28,8 +28,9 @@ async function publishToBigQuery(data) {
 
 async function publishEvent(result, call) {
 	let type = PostType.NEITHER;
-	const containsDog = result.labels.indexOf('dog') > -1;
-	const containsCat = result.labels.indexOf('cat') > -1;
+	console.log(result.labels);
+	const containsDog = result.labels.map(x => x.toLowerCase()).includes('dog');
+	const containsCat = result.labels.map(x => x.toLowerCase()).includes('cat');
 
 	if (containsCat && !containsDog) {
 		type = PostType.CAT;
@@ -59,7 +60,11 @@ async function analyzeImage(url, call) {
 		return evt;
 	} catch (error) {
 		logger.error('Error processing image');
-		logger.error(error);
+		logger.error({
+			message: error.message,
+			stack: error.stack,
+			name: error.name
+		});
 	}
 }
 

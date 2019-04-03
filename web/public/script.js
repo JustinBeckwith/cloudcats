@@ -3,6 +3,12 @@ let cats = 0;
 let other = 0;
 const queue = [];
 
+const	CAT = 0;
+const DOG = 1;
+const NEITHER = 2;
+const BOTH = 3;
+const FIN = 'FIN';
+
 const dogDiv = document.querySelector('#dogs');
 const catDiv = document.querySelector('#cats');
 
@@ -51,7 +57,7 @@ function showDialog(data) {
 }
 
 function processMessage(m) {
-	if (m.type === 'FIN') {
+	if (m.type === FIN) {
 		let winner;
 		console.log('we are DONE');
 		if (cats > dogs) {
@@ -71,22 +77,22 @@ function processMessage(m) {
 	} else {
 		const pic = document.createElement('div');
 		pic.style.backgroundImage = 'url(' + m.url + ')';
-		switch (m.type.toLowerCase()) {
-			case 'dog':
+		switch (m.type) {
+			case DOG:
 				dogs++;
 				dogDiv.insertBefore(pic, dogDiv.firstChild);
 				break;
-			case 'cat':
+			case CAT:
 				cats++;
 				catDiv.insertBefore(pic, catDiv.firstChild);
 				break;
-			case 'both':
+			case BOTH:
 				cats++;
 				dogs++;
 				dogDiv.insertBefore(pic, dogDiv.firstChild);
 				catDiv.insertBefore(pic, catDiv.firstChild);
 				break;
-			case 'neither':
+			case NEITHER:
 				other++;
 				break;
 			default:
