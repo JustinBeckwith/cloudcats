@@ -27,6 +27,6 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "ava": "^1.4.1"
+    "ava": "^2.0.0"
   }
 }
