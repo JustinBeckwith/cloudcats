@@ -45,11 +45,11 @@ function showDialog(data) {
 	const dialogTitle = document.querySelector('#dialogTitle');
 
 	if (data.winner === 'tie') {
-		dialogContent.innerText = 'There was a tie!? That was unfulfilling.';
-		dialogTitle.innerText = 'TIE! TIE! TIE!';
+		dialogContent.textContent = 'There was a tie!? That was unfulfilling.';
+		dialogTitle.textContent = 'TIE! TIE! TIE!';
 	} else {
-		dialogContent.innerText = 'It looks like the Internet really likes ' + data.winner + '. Who knew?';
-		dialogTitle.innerText = data.winner + ' WIN!';
+		dialogContent.textContent = 'It looks like the Internet really likes ' + data.winner + '. Who knew?';
+		dialogTitle.textContent = data.winner + ' WIN!';
 	}
 
 	progress.style.display = 'none';
