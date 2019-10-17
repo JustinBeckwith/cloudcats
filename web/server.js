@@ -27,7 +27,7 @@ const relay = require('./catrelay');
 const logger = require('./logger');
 
 async function main() {
-	await server.register([require('vision'), require('inert')]);
+	await server.register([require('vision'), require('@hapi/inert')]);
 
 	// Configure jade views
 	server.views({
