@@ -69,30 +69,23 @@ async function analyzeImage(url, call) {
 }
 
 async function analyze(call) {
-	return new Promise((resolve, reject) => {
-		logger.info('Starting to analyze!');
-		let cnt = 0;
-		const ai = util.callbackify(analyzeImage);
-		reddit.getImageUrls().then(urls => {
-			const q = async.queue((url, callback) => {
-				ai(url, call, err => {
-					if (!err) {
-						cnt++;
-						logger.info(`${cnt} objects complete`);
-					}
+	logger.info('Starting to analyze!');
+	let cnt = 0;
+	const ai = util.callbackify(analyzeImage);
+	const urls = await reddit.getImageUrls();
+	const q = async.queue((url, callback) => {
+		ai(url, call, err => {
+			if (!err) {
+				cnt++;
+				logger.info(`${cnt} objects complete`);
+			}
 
-					callback(err);
-				});
-			}, 15);
-			q.push(urls);
-			q.drain = () => {
-				logger.info('***all items have been processed***');
-				resolve();
-			};
-		}).catch(error => {
-			reject(error);
+			callback(err);
 		});
-	});
+	}, 15);
+	q.push(urls);
+	await q.drain();
+	logger.info('***all items have been processed***');
 }
 
 module.exports = {
