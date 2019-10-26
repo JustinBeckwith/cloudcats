@@ -1,5 +1,3 @@
 #!/bin/bash
-TAG=$(date +%s)
-docker build -t gcr.io/cloudcats-next/ccweb:$TAG .
-docker push gcr.io/cloudcats-next/ccweb:$TAG
-gcloud beta run deploy cloudcats-web --project cloudcats-next --image gcr.io/cloudcats-next/ccweb:$TAG
+gcloud builds submit --tag gcr.io/cloudcats-next/ccweb --project cloudcats-next
+gcloud beta run deploy cloudcats-web --project cloudcats-next --image gcr.io/cloudcats-next/ccweb:latest --platform managed --region us-central1

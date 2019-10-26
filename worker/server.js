@@ -27,5 +27,6 @@ server.addService(proto.Worker.service, {
 			});
 	}
 });
-server.bind('0.0.0.0:8081', grpc.ServerCredentials.createInsecure());
+const port = process.env.PORT || 8081;
+server.bind(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure());
 server.start();

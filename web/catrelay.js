@@ -7,7 +7,7 @@ const logger = require('./logger');
 const packageDef = loader.loadSync('cloudcats.proto');
 const proto = grpc.loadPackageDefinition(packageDef).cloudcats;
 
-const apiEndpoint = process.env.NODE_ENV === 'production' ? 'cloudcats-worker:8081' : '0.0.0.0:8081';
+const apiEndpoint = process.env.WORKER_ENDPOINT || '0.0.0.0:8081';
 
 // Create the subscription, and forward messages to the browser
 const listen = io => {
