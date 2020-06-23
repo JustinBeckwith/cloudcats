@@ -11,7 +11,7 @@
   "author": "Justin Beckwith<justin.beckwith@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/bigquery": "^4.0.0",
+    "@google-cloud/bigquery": "^5.0.0",
     "@google-cloud/debug-agent": "^5.0.0",
     "@google-cloud/logging-winston": "^3.0.0",
     "@google-cloud/storage": "^5.0.0",
