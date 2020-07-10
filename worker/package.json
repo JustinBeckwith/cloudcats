@@ -13,7 +13,7 @@
   "dependencies": {
     "@google-cloud/bigquery": "^5.0.0",
     "@google-cloud/debug-agent": "^5.0.0",
-    "@google-cloud/logging-winston": "^3.0.0",
+    "@google-cloud/logging-winston": "^4.0.0",
     "@google-cloud/storage": "^5.0.0",
     "@google-cloud/trace-agent": "^5.0.0",
     "@google-cloud/vision": "^2.0.0",
