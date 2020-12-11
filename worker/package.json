@@ -20,7 +20,7 @@
     "@grpc/grpc-js": "^1.2.2",
     "@grpc/proto-loader": "^0.5.5",
     "async": "^3.2.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.0",
     "uuid": "^8.3.2",
     "winston": "^3.3.3"
   },
