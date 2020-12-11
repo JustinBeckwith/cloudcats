@@ -15,16 +15,16 @@ const proto = grpc.loadPackageDefinition(packageDef).cloudcats;
 
 const server = new grpc.Server();
 server.addService(proto.Worker.service, {
-	analyze: call => {
-		analyzer.analyze(call)
-			.then(() => {
-				logger.info('Request complete. Ending streaming response.');
-				call.end();
-			}).catch(error => {
-				logger.error('Error analyzing reddit');
-				logger.error(error);
-				call.end();
-			});
+	analyze: async call => {
+		try {
+			await analyzer.analyze(call);
+			logger.info('Request complete. Ending streaming response.');
+			call.end();
+		} catch (error) {
+			logger.error('Error analyzing reddit');
+			logger.error(error);
+			call.end();
+		}
 	}
 });
 const port = process.env.PORT || 8081;

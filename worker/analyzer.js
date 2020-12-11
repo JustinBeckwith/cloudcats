@@ -1,6 +1,6 @@
 'use strict';
 
-const util = require('util');
+const {inspect, callbackify} = require('util');
 const async = require('async');
 const {BigQuery} = require('@google-cloud/bigquery');
 const reddit = require('./reddit');
@@ -22,7 +22,7 @@ async function publishToBigQuery(data) {
 	try {
 		await table.insert(data);
 	} catch (error) {
-		logger.error(`error publishing to bigquery: ${util.inspect(error)}\n\t${error.stack}`);
+		logger.error(`error publishing to bigquery: ${inspect(error)}\n\t${error.stack}`);
 	}
 }
 
@@ -71,7 +71,7 @@ async function analyzeImage(url, call) {
 async function analyze(call) {
 	logger.info('Starting to analyze!');
 	let cnt = 0;
-	const ai = util.callbackify(analyzeImage);
+	const ai = callbackify(analyzeImage);
 	const urls = await reddit.getImageUrls();
 	const q = async.queue((url, callback) => {
 		ai(url, call, err => {
