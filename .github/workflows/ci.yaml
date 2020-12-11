@@ -22,16 +22,14 @@ jobs:
         working-directory: ./${{ matrix.service }}
   lint:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        service: [web, worker]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 14
       - run: npm install
-        working-directory: ./${{ matrix.service }}
+      - run: npm install
+        working-directory: ./web
+      - run: npm install
+        working-directory: ./worker
       - run: npm run lint
-        working-directory: ./${{ matrix.service }}
