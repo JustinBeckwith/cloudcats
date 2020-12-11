@@ -14,16 +14,16 @@ async function annotate(url) {
 	const name = uuid();
 	const file = bucket.file(name);
 
-	const res = await axios({
+	const response = await axios({
 		url,
 		responseType: 'stream'
 	});
-	if (!res.data) {
+	if (!response.data) {
 		throw new Error('Response failed to return data.');
 	}
 
 	await new Promise(resolve => {
-		res.data
+		response.data
 			.pipe(file.createWriteStream())
 			.on('finish', () => {
 				resolve();

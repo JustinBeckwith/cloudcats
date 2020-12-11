@@ -48,8 +48,8 @@ async function _getPage(after) {
 		}
 	};
 
-	const res = await axios(options);
-	return res.data.data;
+	const response = await axios(options);
+	return response.data.data;
 }
 
 module.exports = {
