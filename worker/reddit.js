@@ -14,6 +14,7 @@ async function getImageUrls() {
 		after = await _populatePageUrls(after, allPosts);
 		logger.info('Done loading page!');
 	}
+
 	logger.info('Reddit data request complete: ' + allPosts.length);
 	return allPosts;
 }

@@ -5,6 +5,7 @@ require('@google-cloud/debug-agent').start({
 	allowExpressions: true
 });
 const express = require('express');
+const relay = require('./catrelay');
 
 const app = express();
 const http = require('http').createServer(app);
@@ -15,17 +16,14 @@ const io = require('socket.io')(http, {
 	transports: ['polling']
 });
 
-const relay = require('./catrelay');
-const logger = require('./logger');
-
 // Configure jade views
 app.set('view engine', 'pug');
 
 // Set up static public handler
 app.use(express.static('public'));
 
-app.get('/', (request, res) => {
-	res.render('index');
+app.get('/', (request, response) => {
+	response.render('index');
 });
 
 // Start the server
