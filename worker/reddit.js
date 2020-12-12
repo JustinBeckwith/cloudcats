@@ -1,6 +1,6 @@
 'use strict';
 
-const axios = require('axios');
+const {request} = require('gaxios');
 const logger = require('./logger');
 
 async function getImageUrls() {
@@ -14,7 +14,6 @@ async function getImageUrls() {
 		after = await _populatePageUrls(after, allPosts);
 		logger.info('Done loading page!');
 	}
-
 	logger.info('Reddit data request complete: ' + allPosts.length);
 	return allPosts;
 }
@@ -38,7 +37,7 @@ async function _populatePageUrls(after, allPosts) {
 }
 
 async function _getPage(after) {
-	const options = {
+	const response = await request({
 		url: 'https://www.reddit.com/r/aww/hot.json',
 		headers: {
 			'User-Agent': 'justinbeckwith:cloudcats:v1.0.0 (by /u/justinblat)'
@@ -46,9 +45,7 @@ async function _getPage(after) {
 		params: {
 			after
 		}
-	};
-
-	const response = await axios(options);
+	});
 	return response.data.data;
 }
 
