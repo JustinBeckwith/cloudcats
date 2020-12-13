@@ -6,7 +6,7 @@ require('@google-cloud/debug-agent').start({
 });
 
 const loader = require('@grpc/proto-loader');
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const analyzer = require('./analyzer');
 const logger = require('./logger');
 
@@ -21,6 +21,7 @@ server.addService(proto.Worker.service, {
 			logger.info('Request complete. Ending streaming response.');
 			call.end();
 		} catch (error) {
+			console.error(error);
 			logger.error('Error analyzing reddit');
 			logger.error(error);
 			call.end();
@@ -28,5 +29,7 @@ server.addService(proto.Worker.service, {
 	}
 });
 const port = process.env.PORT || 8081;
-server.bind(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure());
-server.start();
+server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), (err, port) => {
+	server.start();
+	console.log(`worker service started on ${port}`);
+});

@@ -1,7 +1,7 @@
 'use strict';
 
-const axios = require('axios');
-const uuid = require('uuid/v4');
+const {request} = require('gaxios');
+const uuid = require('uuid');
 const {ImageAnnotatorClient} = require('@google-cloud/vision');
 const {Storage} = require('@google-cloud/storage');
 
@@ -11,10 +11,10 @@ const storage = new Storage();
 const bucket = storage.bucket(bucketName);
 
 async function annotate(url) {
-	const name = uuid();
+	const name = uuid.v4();
 	const file = bucket.file(name);
 
-	const response = await axios({
+	const response = await request({
 		url,
 		responseType: 'stream'
 	});
