@@ -74,13 +74,13 @@ async function analyze(call) {
 	const ai = callbackify(analyzeImage);
 	const urls = await reddit.getImageUrls();
 	const q = async.queue((url, callback) => {
-		ai(url, call, err => {
-			if (!err) {
+		ai(url, call, error => {
+			if (!error) {
 				cnt++;
 				logger.info(`${cnt} objects complete`);
 			}
 
-			callback(err);
+			callback(error);
 		});
 	}, 15);
 	q.push(urls);
