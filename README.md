@@ -1,6 +1,6 @@
 # CLOUD CATS
 
-[![CircleCI badge](https://circleci.com/gh/JustinBeckwith/cloudcats/tree/master.svg?style=shield)](https://circleci.com/gh/JustinBeckwith/cloudcats/tree/master)
+![GitHub Actions](https://github.com/JustinBeckwith/cloudcats/actions/workflows/ci.yaml/badge.svg?branch=main)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![Known Vulnerabilities](https://snyk.io/test/github/justinbeckwith/cloudcats/badge.svg)](https://snyk.io/test/github/justinbeckwith/cloudcats)
 

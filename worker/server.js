@@ -29,7 +29,7 @@ server.addService(proto.Worker.service, {
 	}
 });
 const port = process.env.PORT || 8081;
-server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), (err, port) => {
+server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), (error, port) => {
 	server.start();
 	console.log(`worker service started on ${port}`);
 });
