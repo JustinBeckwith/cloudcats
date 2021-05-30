@@ -16,7 +16,7 @@
     "@google-cloud/trace-agent": "^5.1.1",
     "@google-cloud/vision": "^2.1.2",
     "@grpc/grpc-js": "^1.2.2",
-    "@grpc/proto-loader": "^0.5.5",
+    "@grpc/proto-loader": "^0.6.0",
     "async": "^3.2.0",
     "gaxios": "^4.1.0",
     "uuid": "^8.3.2",
