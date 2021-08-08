@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/JustinBeckwith/cloudcats#readme",
   "devDependencies": {
-    "xo": "^0.38.0"
+    "xo": "^0.44.0"
   },
   "xo": {
     "rules": {
