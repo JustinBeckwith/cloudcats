@@ -23,7 +23,7 @@
     "winston": "^3.3.3"
   },
   "engines": {
-    "node": "^14.0.0"
+    "node": "^16.0.0"
   },
   "devDependencies": {
     "ava": "^3.14.0"

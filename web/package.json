@@ -10,7 +10,7 @@
   "author": "Justin Beckwith<justin.beckwith@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "^14.0.0"
+    "node": "^16.0.0"
   },
   "dependencies": {
     "@google-cloud/debug-agent": "^5.1.3",
